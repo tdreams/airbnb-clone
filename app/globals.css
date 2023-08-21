@@ -87,3 +87,16 @@ body,
 .leaflet-top {
   z-index: 0 !important;
 }
+
+li::marker {
+  font-size: 10px;
+}
+
+.rdrMonth {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  width: 100% !important;
+  font-size: 16px !important;
+}
