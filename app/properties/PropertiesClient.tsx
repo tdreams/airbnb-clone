@@ -6,7 +6,6 @@ import ListinCard from "@/components/listings/ListinCard";
 import { toast } from "@/components/ui/use-toast";
 import { SafeUser, SafeReservation, SafeListing } from "@/types";
 import axios from "axios";
-import { error } from "console";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
@@ -19,12 +18,12 @@ const PropertiesClient = ({ listings, currentUser }: PropertiesClientProps) => {
   const router = useRouter();
   const [deletingId, setDeletingId] = useState("");
 
-  const onCancel = useCallback(
+  const onDelete = useCallback(
     (id: string) => {
       setDeletingId(id);
 
       axios
-        .delete(`/api/listing/${id}`)
+        .delete(`/api/listings/${id}`)
         .then(() => {
           toast({
             variant: "destructive",
@@ -47,13 +46,25 @@ const PropertiesClient = ({ listings, currentUser }: PropertiesClientProps) => {
   return (
     <Container>
       <Heading title="Properties" subtitle="List of your properties" />
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
-        {listings.map((listing) => (
+      <div
+        className="
+          mt-10
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-4
+          xl:grid-cols-5
+          2xl:grid-cols-6
+          gap-8
+        "
+      >
+        {listings.map((listing: any) => (
           <ListinCard
             key={listing.id}
             data={listing}
             actionId={listing.id}
-            onAction={onCancel}
+            onAction={onDelete}
             disabled={deletingId === listing.id}
             actionLabel="Delete property"
             currentUser={currentUser}

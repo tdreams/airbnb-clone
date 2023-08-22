@@ -10,9 +10,7 @@ const tripsPage = async () => {
     return <EmptyState title="Unauthauthorized" subtitle="Please login" />;
   }
 
-  const listings = await getListings({
-    userId: currentUser.id,
-  });
+  const listings = await getListings({ userId: currentUser.id });
 
   if (listings.length === 0) {
     return (

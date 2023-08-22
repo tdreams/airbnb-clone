@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import RegisterModal from "@/components/modals/RegisterModal";
 import RentModal from "@/components/modals/RentModal";
 import LoginModal from "@/components/modals/LoginModal";
+import SearchModal from "@/components/modals/SearchModal";
 
 import getCurrentUser from "@/actions/getCurrentUser";
 
@@ -32,6 +33,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <RegisterModal />
+        <SearchModal />
         <LoginModal />
         <RentModal />
         <Toaster />
