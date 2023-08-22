@@ -12,6 +12,7 @@ import { Separator } from "../ui/separator";
 import { signOut } from "next-auth/react";
 import { SafeUser } from "@/types";
 import useRentModal from "@/hooks/useRentModal";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -22,6 +23,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
+  const router = useRouter();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -44,6 +46,26 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
     //open rentModal
     rentModal.onOpen();
   }, [currentUser, loginModal, rentModal]);
+
+  const handleMyTrips = () => {
+    router.push("/trips");
+    setIsOpen(false);
+  };
+
+  const handleMyReservations = () => {
+    router.push("/reservations");
+    setIsOpen(false);
+  };
+
+  const handleMyFavourites = () => {
+    router.push("/favorites");
+    setIsOpen(false);
+  };
+
+  const handleMyProperties = () => {
+    router.push("/properties");
+    setIsOpen(false);
+  };
 
   const handleAirbnbHomeClick = () => {
     onRent();
@@ -77,10 +99,13 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
           <div className={cn("flex flex-col cursor-pointer")}>
             {currentUser ? (
               <>
-                <MenuItem onClick={() => {}} label="My trips" />
-                <MenuItem onClick={() => {}} label="My favorites" />
-                <MenuItem onClick={() => {}} label="My reservattions" />
-                <MenuItem onClick={() => {}} label="My properties" />
+                <MenuItem onClick={handleMyTrips} label="My trips" />
+                <MenuItem onClick={handleMyFavourites} label="My favorites" />
+                <MenuItem
+                  onClick={handleMyReservations}
+                  label="My reservattions"
+                />
+                <MenuItem onClick={handleMyProperties} label="My properties" />
                 <MenuItem
                   onClick={handleAirbnbHomeClick}
                   label="Airbnb my home"
