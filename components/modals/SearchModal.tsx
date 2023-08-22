@@ -40,8 +40,9 @@ const SearchModal = () => {
 
   const Map = useMemo(
     () => dynamic(() => import("../Map"), { ssr: false }),
-    [location]
+    []
   );
+
   const onBack = useCallback(() => {
     setStep((value) => value - 1);
   }, []);
@@ -56,6 +57,7 @@ const SearchModal = () => {
     }
 
     let currentQuery = {};
+
     if (params) {
       currentQuery = qs.parse(params.toString());
     }
@@ -83,9 +85,9 @@ const SearchModal = () => {
       },
       { skipNull: true }
     );
+
     setStep(STEPS.LOCATION);
     searchModal.onClose();
-
     router.push(url);
   }, [
     step,
@@ -93,9 +95,10 @@ const SearchModal = () => {
     location,
     router,
     guestCount,
-    bathroomCount,
+    roomCount,
     dateRange,
     onNext,
+    bathroomCount,
     params,
   ]);
 

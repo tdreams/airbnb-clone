@@ -55,7 +55,7 @@ const RentModal = () => {
     return dynamic(() => import("../Map"), {
       ssr: false,
     });
-  }, [location]);
+  }, []);
 
   const setCustomValues = (id: string, value: any) => {
     if (id === "price" && value < 1) {
