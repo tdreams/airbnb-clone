@@ -2,6 +2,18 @@ const { PrismaClient } = require("@prisma/client");
 
 const db = new PrismaClient();
 
+const userIds = [
+  "64dc14c0ca433c6ab7c31f2f",
+  "64dc2989880e94316fbd681c",
+  "64e422726702c232e3cb6c5f",
+  // Add more user IDs here
+];
+
+function getRandomUserId() {
+  const randomIndex = Math.floor(Math.random() * userIds.length);
+  return userIds[randomIndex];
+}
+
 async function main() {
   try {
     await db.listing.createMany({
@@ -18,7 +30,7 @@ async function main() {
           bathroomCount: 2,
           guestCount: 6,
           locationValue: "AR",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 750,
         },
         {
@@ -33,7 +45,7 @@ async function main() {
           bathroomCount: 5,
           guestCount: 12,
           locationValue: "AU",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 3500,
         },
         {
@@ -48,8 +60,23 @@ async function main() {
           bathroomCount: 3,
           guestCount: 8,
           locationValue: "CA",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 1200,
+        },
+        {
+          title: "Medieval Castle Adventure",
+          description:
+            "Live like royalty in this medieval castle. Knight-themed dinners, secret passages, and historical wonders.",
+          imageSrc:
+            "https://a0.muscache.com/pictures/5fe7cd1b-ed1e-481f-bb7d-af36239fbe50.jpg",
+          createdAt: new Date("2023-08-22T13:45:10.678Z"),
+          category: "Castles",
+          roomCount: 8,
+          bathroomCount: 6,
+          guestCount: 16,
+          locationValue: "DE",
+          userId: getRandomUserId(),
+          price: 5000,
         },
         {
           title: "Charming Windmill Retreat",
@@ -63,7 +90,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 2,
           locationValue: "NL",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 350,
         },
         {
@@ -78,7 +105,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 4,
           locationValue: "BS",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 1500,
         },
         {
@@ -93,7 +120,7 @@ async function main() {
           bathroomCount: 2,
           guestCount: 6,
           locationValue: "BR",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 800,
         },
         {
@@ -108,7 +135,7 @@ async function main() {
           bathroomCount: 2,
           guestCount: 4,
           locationValue: "CO",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 900,
         },
         {
@@ -123,7 +150,7 @@ async function main() {
           bathroomCount: 4,
           guestCount: 10,
           locationValue: "FR",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 2000,
         },
         {
@@ -138,7 +165,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 2,
           locationValue: "ES",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 300,
         },
         {
@@ -153,7 +180,7 @@ async function main() {
           bathroomCount: 0,
           guestCount: 4,
           locationValue: "CA",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 100,
         },
         {
@@ -168,7 +195,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 3,
           locationValue: "NO",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 700,
         },
         {
@@ -183,7 +210,7 @@ async function main() {
           bathroomCount: 3,
           guestCount: 8,
           locationValue: "AZ",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 1100,
         },
         {
@@ -198,7 +225,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 2,
           locationValue: "DE",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 1200,
         },
         {
@@ -213,7 +240,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 4,
           locationValue: "CA",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 950,
         },
         {
@@ -228,7 +255,7 @@ async function main() {
           bathroomCount: 1,
           guestCount: 2,
           locationValue: "NO",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 1300,
         },
         {
@@ -243,7 +270,7 @@ async function main() {
           bathroomCount: 8,
           guestCount: 20,
           locationValue: "IE",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 5000,
         },
         {
@@ -258,7 +285,7 @@ async function main() {
           bathroomCount: 3,
           guestCount: 8,
           locationValue: "TH",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 3800,
         },
         {
@@ -273,7 +300,7 @@ async function main() {
           bathroomCount: 2,
           guestCount: 6,
           locationValue: "CA",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 3500,
         },
         {
@@ -288,8 +315,98 @@ async function main() {
           bathroomCount: 2,
           guestCount: 6,
           locationValue: "CO",
-          userId: "64dc14c0ca433c6ab7c31f2f",
+          userId: getRandomUserId(),
           price: 5000,
+        },
+        {
+          title: "Underwater Paradise Villa",
+          description:
+            "Dive into luxury in this underwater villa. Coral reefs, marine life, and a mesmerizing aquatic experience.",
+          imageSrc:
+            "https://a0.muscache.com/im/pictures/cf403bd9-9adc-4474-9fe1-645b39de2f54.jpg?im_w=720",
+          createdAt: new Date("2023-09-05T14:10:12.999Z"),
+          category: "Islands",
+          roomCount: 3,
+          bathroomCount: 2,
+          guestCount: 6,
+          locationValue: "HT",
+          userId: getRandomUserId(),
+          price: 5000,
+        },
+        {
+          title: "Frozen Wonderland Cabin",
+          description:
+            "Experience the beauty of winter in this cabin wonderland. Ice fishing, igloo building, and northern lights dancing.",
+          imageSrc:
+            "https://a0.muscache.com/im/pictures/0ccc059a-607e-46d8-91cb-857120c523d5.jpg",
+          createdAt: new Date("2023-09-03T06:15:18.222Z"),
+          category: "Arctic",
+          roomCount: 2,
+          bathroomCount: 1,
+          guestCount: 4,
+          locationValue: "IE",
+          userId: getRandomUserId(),
+          price: 1400,
+        },
+        {
+          title: "Sahara Star Camp",
+          description:
+            "Sleep beneath a canopy of stars in the Sahara. Nomadic culture, traditional music, and endless desert horizons.",
+          imageSrc:
+            "https://a0.muscache.com/im/pictures/af29d062-210c-4e98-b87d-d15b41d74202.jpg?im_w=720",
+          createdAt: new Date("2023-09-01T22:20:10.444Z"),
+          category: "Desert",
+          roomCount: 10,
+          bathroomCount: 6,
+          guestCount: 20,
+          locationValue: "BT",
+          userId: getRandomUserId(),
+          price: 2700,
+        },
+        {
+          title: "Epic Cliffside Villa",
+          description:
+            "Live life on the edge in this cliffside villa. Infinity pool, panoramic sunsets, and an adrenaline-filled experience.",
+          imageSrc:
+            "https://a0.muscache.com/im/pictures/miso/Hosting-53268782/original/05460b13-5493-45e8-a207-92f89dadc522.jpeg?im_w=720",
+          createdAt: new Date("2023-08-31T16:30:22.789Z"),
+          category: "Lux",
+          roomCount: 4,
+          bathroomCount: 3,
+          guestCount: 8,
+          locationValue: "BJ",
+          userId: getRandomUserId(),
+          price: 3200,
+        },
+        {
+          title: "Ancient Pyramid Retreat",
+          description:
+            "Unearth ancient mysteries in this pyramid retreat. Astrological observations, sand meditation, and history reimagined.",
+          imageSrc:
+            "https://a0.muscache.com/im/pictures/aa84ea6f-71a8-4186-bb89-9e07217e1b2c.jpg",
+          createdAt: new Date("2023-08-29T03:15:12.345Z"),
+          category: "Desert",
+          roomCount: 3,
+          bathroomCount: 2,
+          guestCount: 6,
+          locationValue: "EG",
+          userId: getRandomUserId(),
+          price: 2200,
+        },
+        {
+          title: "Dune Desert Camp",
+          description:
+            "Sleep under the stars in this luxury desert camp. Camel rides, sandboarding, and awe-inspiring desert dunes.",
+          imageSrc:
+            "https://a0.muscache.com/im/pictures/6aab9a34-f079-4b78-ac19-4ab72f5426d5.jpg?im_w=1920",
+          createdAt: new Date("2023-08-25T12:15:55.888Z"),
+          category: "Desert",
+          roomCount: 6,
+          bathroomCount: 4,
+          guestCount: 12,
+          locationValue: "EG",
+          userId: getRandomUserId(),
+          price: 1900,
         },
       ],
     });

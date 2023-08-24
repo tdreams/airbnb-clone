@@ -50,7 +50,7 @@ const MouseBlurEffect: React.FC<MouseBlurEffectProps> = ({
         <motion.div
           className="fixed z-50 lg:block duration-75 ease-in-out transition bg-gradient-to-l from-rose-700 to-rose-800"
           style={{
-            width: buttonRef.current.clientWidth * 1.5,
+            width: buttonRef.current.clientWidth,
             height: buttonRef.current.clientHeight,
             borderRadius: "80%",
             pointerEvents: "none",

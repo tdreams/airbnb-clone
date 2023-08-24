@@ -26,14 +26,14 @@ const Button = ({
   const buttonRef = useRef<HTMLButtonElement>(null);
   return (
     <div
-      className="relative"
+      className="relative w-full overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <button
         ref={buttonRef}
         className={cn(
-          " relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg  transition  w-full overflow-hidden",
+          " relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg  transition  w-full ",
           outline ? "bg-white" : "bg-gradient-to-r from-rose-400 to-rose-700",
           outline
             ? "border-black"
@@ -47,7 +47,7 @@ const Button = ({
         onClick={onClick}
         disabled={disabled}
       >
-        <MouseBlurEffect isShown={isHovered} buttonRef={buttonRef} />
+        {/* <MouseBlurEffect isShown={isHovered} buttonRef={buttonRef} /> */}
         {Icon && <Icon size={24} className="absolute left-4 top-3" />}
         {label}
       </button>
